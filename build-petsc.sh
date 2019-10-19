@@ -1,7 +1,10 @@
 #!/bin/bash
 source env-fenics.sh
-VERSION="3.12.0"
-cd petsc-${VERSION}
+cd ${BUILD_DIR}
+curl -O http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-${PETSC_VERSION}.tar.gz
+echo "Extracting petsc-lite-${PETSC_VERSION}.tar.gz"
+tar -xf petsc-lite-${PETSC_VERSION}.tar.gz
+cd petsc-${PETSC_VERSION}
 VALGRIND_DIR="/curc/sw/valgrind/3.11.0"
 
 python2 ./configure \
@@ -25,9 +28,3 @@ python2 ./configure \
 
 make
 make install
-#		--with-mpi-include=${mpidir}/include \
-#		--with-mpi-lib=${mpidir}/lib \
-#		--with-mpi-bin=${mpidir}/bin \
-#		--with-cc=$CC \
-#		--with-cxx=$CXX \
-#		--with-fc=$FC \
