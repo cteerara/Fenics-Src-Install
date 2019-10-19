@@ -1,6 +1,16 @@
 # Fenics Install from Source
-Build FEniCS Finite Element library from source on CU-Boulder's Summit cluster.
-## Libraries to be installed
+This contains the scripts used for local installation of FEniCS on CU-Boulder's Summit Cluster. General steps and source installation are listed below.
+
+## Installing on CU-Boulder's Summit Cluster
+1. Edit the PREFIX variable in env-fenics.sh file to the directory you want to install FEniCS on.
+2. run build-all.sh 
+3. You must source the run-env-fenics.sh file before running any code using FEniCS. 
+```
+source PREFIX/run-env-fenics.sh
+python3 your_fenics_code.py
+```
+
+## Libraries needed to be installed
 The following is a list of libraries required by FEniCS. The version combinations are what worked for me. The following is the order in which I installed the libraries. 
 1. Compilers and mpi implementation 
     - intel/17.4 & impi/17.3
@@ -17,6 +27,7 @@ The following is a list of libraries required by FEniCS. The version combination
     - setuptools
     - numpy
     - sympy/1.1.1
+    - vtk
     - h5py
     - numexpr
     - mpi4py
@@ -27,6 +38,7 @@ The following is a list of libraries required by FEniCS. The version combination
 11. FEniCS modules
     - fenics-ffc (include FIAT, dijitso, UFL, FFC)
     - dolfin
+
 
 ## Install Configurations
 If the libraries are not listed here, just follow the usual install procedure listed in the library's README. 
