@@ -39,6 +39,7 @@ module load impi/17.3
 module load valgrind
 module load cmake
 module load python/3.6.5
+module load hdf5
 MPI_DIR="/curc/sw/intel/17.4/compilers_and_libraries_2017.4.196/linux/mpi/intel64"
 
 #-- Setup paths
