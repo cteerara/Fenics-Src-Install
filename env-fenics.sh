@@ -11,21 +11,6 @@ PYBIND11_VERSION=2.2.3
 #-- Copy this file to prefix location.
 cp env-fenics.sh ${PREFIX}
 
-#-- GNU compilers
-#PYVER=3.5
-#export CC=gcc
-#export CXX=g++
-#export FC=gfortran
-#export MPICC=mpicc
-#export MPICXX=mpicxx
-#export MPIFC=mpifort
-#module load gcc/8.2.0
-#module load openmpi/4.0.0
-#module load valgrind
-#module load cmake
-#module load python/3.5.1
-#MPI_DIR="/curc/sw/openmpi/4.0.0/gcc/8.2.0"
-
 #-- Intel compilers
 PYVER=3.6
 export CC=icc

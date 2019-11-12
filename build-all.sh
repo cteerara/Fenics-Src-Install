@@ -1,7 +1,6 @@
 #!/bin/bash
 source env-fenics.sh
-cp env-fenics.sh ${PREFIX}
-cp run-env-fenics.sh ${PREFIX}
+
 ./build-petsc.sh
 ./build-slepc.sh
 ./build-eigen.sh
@@ -10,6 +9,23 @@ cp run-env-fenics.sh ${PREFIX}
 ./build-fenicsmodules.sh
 ./build-boost.sh
 ./build-dolfin.sh
+
+cp env-fenics.sh ${PREFIX}
+> ${PREFIX}/run-env-fenics.sh
+echo "source ${PREFIX}env-fenics.sh" >> ${PREFIX}/run-env-fenics.sh
+echo "export OMP_NUM_THREADS=1" >> ${PREFIX}/run-env-fenics.sh
+echo "source \$PREFIX/share/dolfin/dolfin.conf" >> ${PREFIX}/run-env-fenics.sh
+
+echo ">-----------------------------------------------------------------------------"
+echo ">-----------------------------------------------------------------------------"
+echo ">-----------------------------------------------------------------------------"
+echo ">---- BUILD COMPLETE"
+echo ">---- TO RUN YOUR APPLICATION: "
+echo ">---- $ source PREFIX/run-env-fenics.sh "
+echo ">---- $ python3 your_fenics_script.py"
+echo ">-----------------------------------------------------------------------------"
+echo ">-----------------------------------------------------------------------------"
+echo ">-----------------------------------------------------------------------------"
 
 
 
