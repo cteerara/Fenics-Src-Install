@@ -1,14 +1,16 @@
 #!/bin/bash
 source env-fenics.sh
 
+
 ./build-petsc.sh
 ./build-slepc.sh
 ./build-eigen.sh
 ./build-pybind.sh
 ./build-pythonmodules.sh
 ./build-fenicsmodules.sh
-./build-boost.sh
 ./build-dolfin.sh
+
+
 
 cp env-fenics.sh ${PREFIX}
 > ${PREFIX}/run-env-fenics.sh
@@ -26,7 +28,4 @@ echo ">---- $ python3 your_fenics_script.py"
 echo ">-----------------------------------------------------------------------------"
 echo ">-----------------------------------------------------------------------------"
 echo ">-----------------------------------------------------------------------------"
-
-
-
 

@@ -11,6 +11,7 @@ PYBIND11_VERSION=2.2.3
 #-- Copy this file to prefix location.
 cp env-fenics.sh ${PREFIX}
 
+
 #-- Intel compilers
 PYVER=3.6
 export CC=icc
@@ -25,6 +26,7 @@ module load valgrind
 module load cmake
 module load python/3.6.5
 module load hdf5
+module load boost
 MPI_DIR="/curc/sw/intel/17.4/compilers_and_libraries_2017.4.196/linux/mpi/intel64"
 
 #-- Setup paths
