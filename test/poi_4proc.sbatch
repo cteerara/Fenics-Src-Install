@@ -4,7 +4,7 @@
 #SBATCH --time=00:30:00
 #SBATCH --qos=testing
 #SBATCH --partition=shas-testing
-#SBATCH --output=testout.out
+#SBATCH --output=p4.out
 echo " Launching job with 4 processes"
 echo " FEniCS compiled with intel compilers "
 source PREFIX/run-env-fenics.sh

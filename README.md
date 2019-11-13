@@ -3,13 +3,32 @@ This contains the scripts used for local installation of FEniCS on CU-Boulder's 
 
 ## Installing on CU-Boulder's Summit Cluster
 1. Edit the PREFIX variable in env-fenics.sh file to the directory you want to install FEniCS on.
-2. run build-all.sh 
-3. You must source the run-env-fenics.sh file before running any code using FEniCS. 
+2. ssh to the scompile partition by typing
+```
+$ ssh scompile
+```
+3. run build-all.sh 
+4. To run a job, you must source the run-env-fenics.sh file before running any code using FEniCS. 
 ```
 source PREFIX/run-env-fenics.sh
 python3 your_fenics_code.py
 ```
 
+## Test
+To build test, simply run the build-test.sh script. This will create a job script (.sbatch) in the test directory.
+To run tests, do
+```
+$ sbatch test_1proc.sbatch
+```
+To get scaling data, you must run all the 1proc, 2proc, and 4proc tests. NOTE that since we are running on shas-test partition, we can only run one job at a time. Simply repeat the code above for all the .sbatch files. The output will be p1.out, p2.out, and p4.out respectively.
+
+To monitor your job status, type:
+```
+squeue -u UsrName
+```
+where UsrName is your account name on the cluster. Should be the first two letters of your first then last name followed by a 4 digits number. 
+
+Once you run all the test cases, you will see output files (p1.out, etc) in the test folder. 
 # General guide for installing on other clusters
 ## Libraries needed to be installed
 The following is a list of libraries required by FEniCS. The version combinations are what worked for me. The following is the order in which I installed the libraries. 
