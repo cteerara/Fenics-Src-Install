@@ -7,7 +7,7 @@ This contains the scripts used for local installation of FEniCS on CU-Boulder's 
 ```
 $ ssh scompile
 ```
-3. run build-all.sh 
+3. run build-all.sh. This will take a while.  
 4. To run a job, you must source the run-env-fenics.sh file before running any code using FEniCS. 
 ```
 source PREFIX/run-env-fenics.sh
@@ -15,20 +15,21 @@ python3 your_fenics_code.py
 ```
 
 ## Test
-To build test, simply run the build-test.sh script. This will create a job script (.sbatch) in the test directory.
-To run tests, do
+1. To build test, simply run the build-test.sh script. This will create a job script (.sbatch) in the test/ directory. You, then, run each job by going to test/ and type the following to the terminal:
 ```
+$ cd test/
 $ sbatch test_1proc.sbatch
 ```
-To get scaling data, you must run all the 1proc, 2proc, and 4proc tests. NOTE that since we are running on shas-test partition, we can only run one job at a time. Simply repeat the code above for all the .sbatch files. The output will be p1.out, p2.out, and p4.out respectively.
-
-To monitor your job status, type:
+NOTE: these jobs are submitted on the shas-test partition, so only one job can be running at a time. To check the status of your job, type into the terminal:
 ```
 squeue -u UsrName
 ```
-where UsrName is your account name on the cluster. Should be the first two letters of your first then last name followed by a 4 digits number. 
+where UsrName is your account name on the Summit. It should be the first two letters of your first and last name followed by a 4 digits number. 
 
-Once you run all the test cases, you will see output files (p1.out, etc) in the test folder. 
+2. Once you run all the tests, you will see the output files p1.out, p6.out, p12.out. Run the python script: PlotScaling.py to get the strong scaling of the poisson code. Compare with test_scaling.png for comparison.
+
+3. The simulation results are saved in test_output_#nprocs/. Verify your result with test_result.png
+
 # General guide for installing on other clusters
 ## Libraries needed to be installed
 The following is a list of libraries required by FEniCS. The version combinations are what worked for me. The following is the order in which I installed the libraries. 

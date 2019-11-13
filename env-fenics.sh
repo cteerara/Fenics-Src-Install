@@ -1,5 +1,5 @@
 #-- Setup prefix location. Please insert the ABSOLUTE path to the directory you want fenics to be installed.  
-PREFIX=/projects/chte9199/fenics_test/fenics_install_test/
+PREFIX=/projects/chte9199/fenics_test/fenics_install_test3/
 BUILD_DIR=${PREFIX}/build/
 mkdir -p ${BUILD_DIR}
 
