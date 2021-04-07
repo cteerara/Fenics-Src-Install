@@ -1,9 +1,10 @@
 #!/bin/bash
 source env-fenics.sh
 cd ${BUILD_DIR}
-curl -O http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-${PETSC_VERSION}.tar.gz
-echo "Extracting petsc-lite-${PETSC_VERSION}.tar.gz"
-tar -xf petsc-lite-${PETSC_VERSION}.tar.gz
+# curl -O http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-${PETSC_VERSION}.tar.gz
+curl -O https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-${PETSC_VERSION}.tar.gz
+echo "Extracting petsc-${PETSC_VERSION}.tar.gz"
+tar -xf petsc-${PETSC_VERSION}.tar.gz
 cd petsc-${PETSC_VERSION}
 VALGRIND_DIR="/curc/sw/valgrind/3.11.0"
 

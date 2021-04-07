@@ -13,6 +13,7 @@ echo FENICS_VERSION $FENICS_VERSION
 
 cd ${BUILD_DIR}
 git clone --branch=$FENICS_VERSION https://bitbucket.org/fenics-project/dolfin
+
 mkdir -p dolfin/build 
 cd dolfin/build 
 cmake .. -DCMAKE_INSTALL_PREFIX=${PREFIX}  -DDOLFIN_ENABLE_VTK=true -DDOLFIN_ENABLE_HDF5:BOOL=ON -DHDF5_C_COMPILER_EXECUTABLE:FILEPATH=/curc/sw/hdf5/1.10.1/impi/17.3/intel/17.4/bin/h5pcc
