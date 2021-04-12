@@ -21,6 +21,7 @@ make install
 cd ../..
 cd dolfin/python
 python3 -m pip install --upgrade --prefix=${PREFIX} --no-cache-dir --ignore-installed setuptools 
+python3 -m pip install --upgrade --prefix=${PREFIX} --no-cache-dir --ignore-installed mpi4py
 python3 -m pip install --prefix=${PREFIX} --no-cache-dir .
 cd ../..
 
